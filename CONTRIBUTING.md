@@ -11,3 +11,9 @@
 新增对话用一个真实场景试读：它是否接住上句、是否沿用同一对象、实用答案是否完整、图片是否贴合笑点。修订后运行 `python scripts/build.py` 与 `python scripts/verify.py`。
 
 本项目原创内容的贡献采用 MIT 许可证；第三方素材保留各自权利与来源记录。权利人可通过仓库议题提供素材路径与权属依据，维护者据此更正或移除。
+
+## 从聊天里贡献一个梗
+
+发图并告诉 iivv 使用情景，助理会按 [统一格式](skills/iivv/references/extension-guide.md) 保存图片、触发场景与接话示例。先在本地用，想分享时说“把这条梗导出投稿包”。
+
+将 ZIP 附在 [投稿表](https://github.com/youngiry/iivv-skill/issues/new?template=meme.md)，或向 skills/iivv/custom/ 添加条目目录后提交 PR。PR 需重建索引并运行 python skills/iivv/scripts/manage_memes.py check。维护者审核图片、出处、权利与试聊结果后合并。个人新增不会自动上传，来源待核对可明确注明。

@@ -4,6 +4,8 @@ import hashlib
 import json
 import re
 import zipfile
+import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills/iivv'
@@ -21,6 +23,7 @@ def check_links(path):
 
 
 def main():
+    subprocess.run([sys.executable, str(SKILL / 'scripts/manage_memes.py'), 'check'], check=True)
     manifest = json.loads((SKILL / 'assets/manifest.json').read_text(encoding='utf-8'))
     ids = [r['id'] for r in manifest]
     assert len(ids) == len(set(ids)), '图片编号重复'

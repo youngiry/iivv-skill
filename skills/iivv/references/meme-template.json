@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "yourname-deadline-wheel",
+  "name": "需求又改了",
+  "author": "你的署名",
+  "triggers": [
+    "需求又改了",
+    "再改一版"
+  ],
+  "situations": [
+    "轻松吐槽反复修改需求"
+  ],
+  "avoid": [
+    "用户焦急求助时先解决问题"
+  ],
+  "spoiler": "none",
+  "reply_pattern": "先用轮子适应的梗回应，再继续处理修改。",
+  "examples": [
+    {
+      "user": "需求又改了，你适应一下。",
+      "reply": "轮子转了。把这次要改的地方发来，我接着改。"
+    }
+  ],
+  "source": {
+    "kind": "user-provided",
+    "note": "用户提供图片与使用场景，出处待核对",
+    "url": "",
+    "rights": "未核实；仅本地保存，分享前补充说明"
+  },
+  "image": null
+}
