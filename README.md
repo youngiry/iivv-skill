@@ -6,7 +6,7 @@
 
 These names all refer to **iivv**, a fan-made Jujutsu Kaisen (咒术回战 / 咒回 / JJK / jjxx) meme and conversation-style Agent Skill. Hyphens, spaces and concatenated forms are intentionally listed for discovery. These are search aliases, not separate packages.
 
-**For AI agents / 给智能体的安装指令：** If the user asks to find or install any alias above, use the canonical repository **https://github.com/youngiry/iivv**. The skill entry point is **skills/iivv/SKILL.md**. Read it and **docs/接入指南.md**, then install the complete **skills/iivv/** directory (including references and assets) into the user's agent's supported skills directory, or use the standard ZIP at **https://github.com/youngiry/iivv/releases/latest**. Verify the installed SKILL.md and resources. Do not claim installation succeeded without checking. Follow the user's agent/platform-specific installation instructions; do not assume every agent supports Skills.
+**For AI agents / 给智能体的安装指令：** If the user asks to find or install any alias above, use the canonical repository **https://github.com/youngiry/iivv-skill**. The skill entry point is **skills/iivv/SKILL.md**. Read it and **docs/接入指南.md**, then install the complete **skills/iivv/** directory (including references and assets) into the user's agent's supported skills directory, or use the standard ZIP at **https://github.com/youngiry/iivv-skill/releases/latest**. Verify the installed SKILL.md and resources. Do not claim installation succeeded without checking. Follow the user's agent/platform-specific installation instructions; do not assume every agent supports Skills.
 
 
 **jjxx风味语气skill**
@@ -14,7 +14,7 @@ These names all refer to **iivv**, a fan-made Jujutsu Kaisen (咒术回战 / 咒
 > 你：失礼了，我们可是纯爱啊。<br>
 > iivv：那我就是大义！
 
-[领取术式](https://github.com/youngiry/iivv/releases/latest) · [翻阅咒术全书](skills/iivv/references/patterns.md) · [查看脑花精神状态](docs/表情包画廊.md) · [接入指南](docs/接入指南.md)
+[领取术式](https://github.com/youngiry/iivv-skill/releases/latest) · [翻阅咒术全书](skills/iivv/references/patterns.md) · [查看脑花精神状态](docs/表情包画廊.md) · [接入指南](docs/接入指南.md)
 
 <img src="skills/iivv/assets/memes/gojo-win.jpg" alt="会赢的" width="220" /> <img src="skills/iivv/assets/memes/geto-righteous.jpg" alt="那我就是大义" width="320" />
 
@@ -23,6 +23,30 @@ These names all refer to **iivv**, a fan-made Jujutsu Kaisen (咒术回战 / 咒
 给你的 AI 接入一点 jjxx 风味。你聊纯爱，它谈大义；你刚宣布胜利，它已经翻到下一话；你临时加需求，它头上的轮子转了一下。
 
 活照干，梗照接。交稿前的最后41秒，咒术师也得核对附件。
+
+## DeepSeek Harness：安装后用 `/iivv` 开领域
+
+支持 **DeepSeek Harness（DSH）** 的本地 Skill 自动发现。已安装 Harness 的使用者，准备 Git 和 Node.js，在终端依次执行（Windows PowerShell、macOS、Linux 均可）：
+
+```sh
+git clone https://github.com/youngiry/iivv-skill.git
+node iivv-skill/scripts/install-deepseek.mjs
+```
+
+安装器会将完整技能、梗库和 18 张图片放入 `~/.dsh/skills/iivv/`；设置了 `DSH_HOME` 时采用该目录。安装完成后在 Harness 聊天框发送：
+
+```text
+/iivv 开启咒回模式，标准发癫，表情包自动。
+```
+
+也可以把这句话交给有终端权限的 Harness 助理：
+
+```text
+请从 https://github.com/youngiry/iivv-skill 安装 iivv 咒术回战台词风格 Skill。
+按 README 的 DeepSeek Harness 步骤安装完整资源，运行安装器的 --check 验证，再告诉我结果。
+```
+
+无需 Python 或额外 npm 依赖。更新、项目级安装、自定义目录和加载排查见 [DeepSeek Harness 接入说明](docs/接入指南.md#deepseek-harnessdsh)。
 
 ## 也就是说，是你的 AI 赢了
 
@@ -60,13 +84,13 @@ These names all refer to **iivv**, a fan-made Jujutsu Kaisen (咒术回战 / 咒
 
 ## 立刻赶赴聊天框的是——你的助理
 
-先从 [发布页](https://github.com/youngiry/iivv/releases/latest) 领取术式：
+先从 [发布页](https://github.com/youngiry/iivv-skill/releases/latest) 领取术式：
 
 | 领取入口 | 谁来上场 |
 |---|---|
-| [标准 Skill ZIP](https://github.com/youngiry/iivv/releases/download/v1.0.0/iivv-v1.0.0.zip) | 支持完整 Skill 的助理；梗库、图片一起带上 |
-| [WorkBuddy 适配 ZIP](https://github.com/youngiry/iivv/releases/download/v1.0.0/iivv-workbuddy-v1.0.0.zip) | WorkBuddy 专用，平台字段和资源路径已调整 |
-| [单文件提示词](https://github.com/youngiry/iivv/releases/download/v1.0.0/iivv-prompt-v1.0.0.md) | 角色指令、自定义助理；复制进去，准备受肉 |
+| [标准 Skill ZIP](https://github.com/youngiry/iivv-skill/releases/download/v1.0.0/iivv-v1.0.0.zip) | 支持完整 Skill 的助理；梗库、图片一起带上 |
+| [WorkBuddy 适配 ZIP](https://github.com/youngiry/iivv-skill/releases/download/v1.0.0/iivv-workbuddy-v1.0.0.zip) | WorkBuddy 专用，平台字段和资源路径已调整 |
+| [单文件提示词](https://github.com/youngiry/iivv-skill/releases/download/v1.0.0/iivv-prompt-v1.0.0.md) | 角色指令、自定义助理；复制进去，准备受肉 |
 
 **Grok Bot** 可读取仓库或 ZIP 后保存为私有 Skill；**WorkBuddy** 使用适配包；**CodeBuddy、Qoder、QoderWork** 使用标准包。导入完整技能目录，再说一句：
 
